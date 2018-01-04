@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.learnmymove.learnmymove.MainActivity">
+
+    <TextView
+        android:id="@+id/lbl_latitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        tools:text="Latitude : " />
+
+    <TextView
+        android:id="@+id/lbl_longitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lbl_latitude"
+        android:padding="8dp"
+        tools:text="Longitude : " />
+
+    <Button
+        android:id="@+id/btn_find_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lbl_longitude"
+        android:text="Find  Location" />
+
+    <Button
+        android:id="@+id/btn_lunch_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_find_location"
+        android:text="Lunch  map" />
+
+</RelativeLayout>

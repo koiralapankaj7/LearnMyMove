@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "466356970991",
+    "firebase_url": "https://learnmymove-7f3ba.firebaseio.com",
+    "project_id": "learnmymove-7f3ba",
+    "storage_bucket": "learnmymove-7f3ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466356970991:android:1d17fce2c008577a",
+        "android_client_info": {
+          "package_name": "com.learnmymove.learnmymove"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "466356970991-pbb9sut9sfjf2o7otksee01ifo0f9v01.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.learnmymove.learnmymove",
+            "certificate_hash": "c5ae9cdae1fa7cff6acc398011539889676048d4"
+          }
+        },
+        {
+          "client_id": "466356970991-d1rbun391n76obb3odfpitigd88vts9u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5Jc2jLrnXoE0rvrEC87xyj9nyyTndA9A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "466356970991-d1rbun391n76obb3odfpitigd88vts9u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
