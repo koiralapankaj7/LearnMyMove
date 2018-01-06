@@ -6,12 +6,25 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.test.mock.MockPackageManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.learnmymove.learnmymove.GMap.GMap;
+import com.learnmymove.learnmymove.NaturalLanguageProcessing.CollectData;
+import com.learnmymove.learnmymove.NaturalLanguageProcessing.Places;
+import com.learnmymove.learnmymove.NaturalLanguageProcessing.TrainData;
+import com.learnmymove.learnmymove.StringPunctuation.RemoveStopWords;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
     String mPermission = Manifest.permission.ACCESS_FINE_LOCATION;
 
     GPSTracker gps;
-    Button btnFindLocation;
-    Button btnLunchMap;
+    Button btnFindLocation, btnLunchMap, btnOpenPlaces;
     TextView lblLatitude, lblLongitude;
 
     @Override
@@ -45,6 +57,29 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //====================================================================
+        TrainData trainData = new TrainData(CollectData.collectPlaces());
+        HashMap<Places, String> classifiedPlaces = trainData.classifyPlaces();
+        for (Object o : classifiedPlaces.entrySet()) {
+
+            Map.Entry pair = (Map.Entry) o;
+            System.out.println("===================================================");
+            Places places = (Places) pair.getKey();
+            System.out.println(places.getPlaceName() + " => " + pair.getValue());
+        }
+
+
+        btnOpenPlaces = findViewById(R.id.btn_places_activity);
+        btnOpenPlaces.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GMap.class);
+                startActivity(intent);
+            }
+
+        });
+
 
     }
 

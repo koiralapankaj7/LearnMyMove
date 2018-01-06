@@ -32,6 +32,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_find_location"
-        android:text="Lunch  map" />
+        android:text="Launch  map" />
+
+    <Button
+        android:id="@+id/btn_places_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_lunch_map"
+        android:text="Open Places" />
 
 </RelativeLayout>
