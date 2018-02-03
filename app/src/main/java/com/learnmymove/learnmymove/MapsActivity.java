@@ -1,5 +1,6 @@
 package com.learnmymove.learnmymove;
 
+import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
@@ -8,6 +9,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -60,5 +62,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15.0f));
         //mMap.animateCamera(CameraUpdateFactory.zoomTo(15.0f));
+
+        mMap.addCircle(new CircleOptions()
+                .center(new LatLng(latitude, longitude))
+                .radius(500)
+                .strokeColor(Color.RED)
+                .fillColor(Color.parseColor("#50222222"))
+                .strokeWidth(5.0f)
+        );
     }
 }

@@ -2,7 +2,10 @@ package com.learnmymove.learnmymove;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.test.mock.MockPackageManager;
@@ -10,12 +13,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.learnmymove.learnmymove.Database.MySQLiteHelper;
 import com.learnmymove.learnmymove.GMap.GMap;
 import com.learnmymove.learnmymove.NaturalLanguageProcessing.CollectData;
+import com.learnmymove.learnmymove.NaturalLanguageProcessing.LocationDetails;
 import com.learnmymove.learnmymove.NaturalLanguageProcessing.Places;
 import com.learnmymove.learnmymove.NaturalLanguageProcessing.TrainData;
 import com.learnmymove.learnmymove.StringPunctuation.RemoveStopWords;
@@ -58,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
         //====================================================================
         TrainData trainData = new TrainData(CollectData.collectPlaces());
         HashMap<Places, String> classifiedPlaces = trainData.classifyPlaces();
@@ -68,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
             Places places = (Places) pair.getKey();
             System.out.println(places.getPlaceName() + " => " + pair.getValue());
         }
+        */
 
 
         btnOpenPlaces = findViewById(R.id.btn_places_activity);
@@ -79,6 +87,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+
+
 
 
     }
